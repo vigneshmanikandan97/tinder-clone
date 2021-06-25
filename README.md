@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Tinder Clone
+
+This app is an attempt to clone tinder.
+It provides swiping features (left/right) on celebrities (5, for time being).
+Parts of this project are still under development.
+
+[![Deploy to Firebase Hosting on merge](https://github.com/vigneshmanikandan97/tinder-clone/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=main&event=push)](https://github.com/vigneshmanikandan97/tinder-clone/actions/workflows/firebase-hosting-merge.yml)
+## Steps to build this app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
