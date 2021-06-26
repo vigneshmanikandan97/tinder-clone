@@ -8,12 +8,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
         <Switch>
           <Route path="/chat">
+            <Header backButton="/"/>
             <h1>You've reached the chats page.</h1>
           </Route>
           <Route path="/">
+            <Header />
             <Card />
             <SwipeButton />
           </Route>
