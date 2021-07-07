@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import './Card.css';
 import TinderCard from 'react-tinder-card';
-import axios from './../../axios';
+// import axios from './../../axios';
+import database from './../../firebase';
 
 function Card() {
 
     const [people, setPeople] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
-            const req = await axios.get('/tinder/cards');
-            setPeople(req.data);
-        }
+        // Using Heroku application
+        // async function fetchData() {
+        //     const req = await axios.get('/tinder/cards');
+        //     setPeople(req.data);
+        // }
 
-        fetchData();
+        // fetchData();
+
+        // Using Cloud Firestore
+        const unsubscribe = database.collection('tinder-users').onSnapshot((snapshot) => {
+                setPeople(snapshot.docs.map(doc => doc.data()));
+            });
+
+        return () => {
+            unsubscribe();
+        };
     }, []);
 
     const swiped = (direction, nameToDelete) => {
@@ -35,7 +46,7 @@ function Card() {
                                 onSwipe={(dir) => swiped(dir, person.name)}
                                 onCardLeftScreen={() => outOfFrame(person.name)}
                                 >
-                                    <div style={{backgroundImage: `url(${person.imgUrl})`}} className="card">
+                                    <div style={{backgroundImage: `url(${person.imageUrl})`}} className="card">
                                         <h3>{person.name},&nbsp;{person.age}</h3>
                                     </div>
                                 </TinderCard>
