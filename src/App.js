@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Header from './components/Header/Header';
 import Card from './components/Cards/Card';
 import SwipeButton from './components/SwipeButtons/SwipeButton';
@@ -16,7 +17,7 @@ function App() {
           </Route>
           <Route path="/">
             <Header />
-            <Card />
+            <React.StrictMode><Card /></React.StrictMode>
             <SwipeButton />
           </Route>
         </Switch>
