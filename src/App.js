@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Card from './components/Cards/Card';
 import SwipeButton from './components/SwipeButtons/SwipeButton';
+import Chats from './components/Chats/Chats';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         <Switch>
           <Route path="/chat">
             <Header backButton="/"/>
-            <h1>You've reached the chats page.</h1>
+            <Chats />
           </Route>
           <Route path="/">
             <Header />
