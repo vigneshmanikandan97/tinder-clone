@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Card.css';
 import TinderCard from 'react-tinder-card';
-// import axios from './../../axios';
 import database from './../../firebase';
 
 function Card() {
@@ -9,14 +8,6 @@ function Card() {
     const [people, setPeople] = useState([]);
 
     useEffect(() => {
-        // Using Heroku application
-        // async function fetchData() {
-        //     const req = await axios.get('/tinder/cards');
-        //     setPeople(req.data);
-        // }
-
-        // fetchData();
-
         // Using Cloud Firestore
         const unsubscribe = database.collection('tinder-users').onSnapshot((snapshot) => {
                 setPeople(snapshot.docs.map(doc => doc.data()));
@@ -25,6 +16,16 @@ function Card() {
         return () => {
             unsubscribe();
         };
+
+        /* Using Heroku application
+        [ADD THIS IN IMPORTS] import axios from './../../axios';
+        async function fetchData() {
+            const req = await axios.get('/tinder/cards');
+            setPeople(req.data);
+        }
+
+        fetchData();
+        */
     }, []);
 
     const swiped = (direction, nameToDelete) => {
