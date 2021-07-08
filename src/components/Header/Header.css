@@ -8,4 +8,5 @@
 .header__logo {
     object-fit: contain;
     height: 35px;
+    width: 32px;
 }
