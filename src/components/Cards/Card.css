@@ -17,8 +17,8 @@
 .card h3 {
     width: fit-content;
     height: fit-content;
-    position: relative;
-    top: 20em;
+    position: fixed;
+    bottom: 0;
     color: #fff;
     font-family: 'Montserrat';
 }

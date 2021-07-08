@@ -7,6 +7,10 @@ import Chats from './components/Chats/Chats';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
+  if ('ontouchstart' in document.documentElement) {
+    console.log("touchstart present");
+    document.addEventListener('touchstart', {passive: true});
+  }
   return (
     <div className="App">
       <Router>
