@@ -1,0 +1,47 @@
+.chat {
+    padding: 1% 2% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-family: 'Roboto' !important;
+    width: 100vw !important;
+    height: 8vh !important;
+    text-transform: none !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0 !important;
+    font-size: inherit !important;
+}
+
+.chat__image {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.chat__mainContainer {
+    width: 100%;
+}
+
+.chat__primaryContainer {
+    padding: 0 2%;
+}
+
+.chat__primaryContainer__name {
+    text-align: left;
+}
+
+.chat__secondaryContainer {
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat__secondaryContainer__message {
+    color: lightslategray;
+}
+
+.chat__secondaryContainer__timestamp {
+    font-size: xx-small;
+    color: darkgray;
+}
